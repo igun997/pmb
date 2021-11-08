@@ -10,3 +10,14 @@ jobs:
     steps:
     - name: Install OpenSSH
       run: sudo apt-get install -y openssh-client
+    - name: SSH Agent Running ? 
+      run: eval $(ssh-agent -s)
+    - name: Apply Deploy Key 
+      run: echo "$DEPLOY_KEY" | tr -d '\r' | ssh-add -
+    - name: Create SSH Folder
+      run: mkdir -p ~/.ssh
+    - name: Apply Chmod 700
+      run: chmod 700 ~/.ssh
+    - name: Pull Recent File
+      run: ssh -o StrictHostKeyChecking=no $HOST "cd smk/;git reset --hard;git pull origin master;git checkout master;"
+
