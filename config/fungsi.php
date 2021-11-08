@@ -189,7 +189,7 @@ function simpantransaksi($id,$nama_pendaftar,$namabank,$lokasi){
 function simpanfoto($id_pendaftar,$nama_pendaftar,$lokasi_foto){
 	global $konek;
 
-	$sql="INSERT INTO `dokumen`(`id_pendaftar`, `nama_pendaftar`, `foto`,`status`) VALUES ('$id_pendaftar','$nama_pendaftar','$lokasi_foto')";
+	$sql="INSERT INTO `dokumen`(`id_pendaftar`, `nama_pendaftar`, `foto`) VALUES ('$id_pendaftar','$nama_pendaftar','$lokasi_foto')";
 	if(mysqli_query($konek, $sql)){
 		return true;
 	}else{
