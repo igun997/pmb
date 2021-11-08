@@ -22,7 +22,7 @@ if(isset($_POST['simpan_foto'])){
     
           if($format === "jpg" || $format === "png" || $format === "JPG" || $format === "PNG" ){
             
-            if(simpanfoto($id_pendaftar,$nama_pendaftar,$lokasi_foto,$status)){
+            if(simpanfoto($id_pendaftar,$nama_pendaftar,$lokasi_foto)){
               echo "<script>alert('Foto berhasil di simpan')</script>";
               echo "<script>window.location.href='dokumen.php</script>";
               }else{
