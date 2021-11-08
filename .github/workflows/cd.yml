@@ -1,0 +1,12 @@
+name: Delivery to Server
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  delivering:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install OpenSSH
+      run: apt-get install -y openssh-client
