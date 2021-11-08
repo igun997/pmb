@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Install OpenSSH
-      run: apt-get install -y openssh-client
+      run: sudo apt-get install -y openssh-client
